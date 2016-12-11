@@ -32,7 +32,7 @@ app.post('/webhook/', function (req, res) {
       }, function(error, response, body) {
         try {
           var condition = body.main;
-          sendTextMessage(sender, "อุณภูมิในวันนี้ คือ " + condition.temp + " "+"°C" + " " + "สภาพอากาศ" + " condition.clouds" + " "+"ที่เมือง " + location);
+          sendTextMessage(sender, "อุณภูมิในวันนี้ คือ " + condition.temp + " "+"°C" + " " + "สภาพอากาศ" +  condition.clouds  + " "+"ที่เมือง " + location);
         } catch(err) {
           console.error('error caught', err);
           sendTextMessage(sender, "กรุณากรอกชื่อเมืองให้ถูกต้อง เช่น London");
@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'Postback received:สวัสดีผู้ใช้งานทุกท่านครับ ถ้าหากอยากทราบเกี่ยวกับสภาพอากาศกรุณากรอกชื่อเมืองที่คุณอยากรู้ได้เลยครับ')
+      sendTextMessage(sender, Postback received:'สวัสดีผู้ใช้งานทุกท่านครับ ถ้าหากอยากทราบเกี่ยวกับสภาพอากาศกรุณากรอกชื่อเมืองที่คุณอยากรู้ได้เลยครับ')
       continue
     }
   }
