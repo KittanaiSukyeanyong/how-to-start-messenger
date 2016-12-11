@@ -32,7 +32,7 @@ app.post('/webhook/', function (req, res) {
       }, function(error, response, body) {
         try {
           var condition = body.main;
-          sendTextMessage(sender, "อุณภูมิในวันนี้ คือ " + condition.temp + "เซลเซียส" + "ในเมือง " + location);
+          sendTextMessage(sender, "อุณภูมิในวันนี้ คือ " + condition.temp + " "+"เซลเซียส" + " "+"ในเมือง " + location);
         } catch(err) {
           console.error('error caught', err);
           sendTextMessage(sender, "กรุณากรอกชื่อเมืองให้ถูกต้อง เช่น London");
