@@ -36,7 +36,8 @@ app.post('/webhook/', function (req, res) {
           sendTextMessage(sender, "อุณภูมิในวันนี้ คือ " + condition.temp + " "+"°C");
           sendTextMessage(sender, "สภาพความชื้น" +" "+ condition.humidity  + " " + "rh");
           sendTextMessage(sender, "ที่เมือง " + location);
-          sendTextMessage(sender, "สภาพอากาศ " +body.weather.description);
+          sendTextMessage(sender, "อุณหภูมิที่ต่ำที่สุดของวันนี้ " +condition.temp_min + " "+"°C");
+          sendTextMessage(sender, "อุณหภูมิที่มากที่สุดของวันนี้ " +condition.temp_max + " "+"°C");
         } catch(err) {
           console.error('error caught', err);
           sendTextMessage(sender, "กรุณากรอกชื่อเมืองให้ถูกต้อง เช่น London");
