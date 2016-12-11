@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'Postback received: ' + text.substring(0, 200), token)
+      sendTextMessage(sender, 'Postback received:สวัสดีผู้ใช้งานทุกท่านครับ ถ้าหากอยากทราบเกี่ยวกับสภาพอากาศกรุณากรอกชื่อเมืองที่คุณอยากรู้ได้เลยครับ')
       continue
     }
   }
